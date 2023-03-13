@@ -1,0 +1,40 @@
+{
+    "name": "snap/page",
+    "description": "Page.",
+    "keywords": ["snap", "page"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Page\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Page\\PageServiceProvider"
+            ],
+            "aliases": {
+                "Page": "Snap\\Page\\Facades\\Page",
+                "Template": "Snap\\Page\\Facades\\Template",
+                "PublicUrls": "Snap\\Page\\Facades\\PublicUrls"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

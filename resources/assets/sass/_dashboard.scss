@@ -1,0 +1,587 @@
+$sidebar-width: 250px;
+
+.vue-tooltip {
+  font-size: 18px;
+}
+.back-to-dash {
+  &.btn {
+    color: $white;
+    font-size: 0.75rem;
+    padding: 15px 28px;
+  }
+
+  .icon {
+    height: .7em;
+    transition: 0.2s transform ease;
+  }
+
+  &:hover, &:active {
+    text-decoration: none;
+
+    .icon {
+      transform: translateX(-5px);
+    }
+  }
+}
+
+.dashboard {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .sidebar {
+    background-color: $gray-600;
+    color: $gray-100;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      flex-basis: $sidebar-width;
+    }
+  }
+
+  .content {
+    width: 100%;
+    background-color: $gray-100;
+  }
+}
+
+$block-size: 7px; //local var for sidebar color blocks hover effect
+.sidebar {
+  .nav {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.dashboard-navigation {
+  .nav-link {
+    padding: 12px 30px;
+    font-weight: 700;
+    font-size: .85rem;
+    color: $gray-200;
+  }
+
+  .nav-item {
+    position: relative;
+    overflow-x: hidden;
+
+    &.active {
+      background-color: $black;
+    }
+
+    .color-block {
+      background-color: $gray-400;
+      width: $block-size;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -$block-size;
+      bottom: 0;
+      transition: 0.2s;
+    }
+
+    &:hover {
+      background-color: $black;
+
+      .color-block {
+        transform: translateX($block-size);
+      }
+      .nav-link {
+        color: $white;
+        transform: translateX($block-size);
+      }
+    }
+  }
+}
+
+.dashboard-navigation:not(.dashboard-navigation--mobile) {
+  .nav-item {
+    &.active {
+      background-image: url('/assets/svg/icon_chevron.svg');
+      background-position: calc(100% - 20px) center;
+      background-repeat: no-repeat;
+      background-size: 8px;
+    }
+  }
+}
+
+.dashboard-navigation--mobile {
+  .dashboard-navigation__toggle {
+    width: 100%;
+    border-radius: 4px;
+    text-align: left;
+    border: none;
+    color: $white;
+    padding: $input-padding-y $input-padding-x;
+    background-color: $gray-500;
+    box-shadow: inset 2px 1px 5px 3px rgba(156,157,157,0.15);
+    position: relative;
+
+    .toggle-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: $input-padding-x;
+    }
+  }
+
+  .dashboard-navigation__dropdown {
+
+  }
+}
+
+
+.hero-dashboard {
+  //background-image: url('//placehold.it/1200X400/000/c6c6c6');
+  background-image: url('../images/dashboard-hero.jpg');
+  //background-size: cover;
+  .hero-text-box {
+    //margin-top: 180px;
+  }
+ .hero-text {
+   min-height: 400px;
+ }
+  /*& > .hero-content {
+    display: flex;
+    min-height: 400px;
+    align-items: center;
+    padding: 0 map-get($spacers, 2);
+
+    @include media-breakpoint-up(md) {
+      padding: 0 map-get($spacers, 6);
+    }
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }*/
+}
+
+.task-progress {}
+
+.task-progress-header {
+  font-size: 1.5rem;
+}
+
+.task-progress-amount {
+  font-size: .9rem;
+  font-weight: bold;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.1rem;
+  }
+}
+
+.container-dashboard {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.container-tasks {
+  max-width: 100%;
+  @include media-breakpoint-up(md) {
+    @include make-container;
+    max-width: map_get($container-max-widths, xl);
+  }
+}
+
+.tasks-list {
+  .task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: .85rem;
+    border: 0;
+    border-radius: 0;
+    border-left: 5px solid;
+    transition: .15s box-shadow, .35s transform;
+
+    @include media-breakpoint-down(sm) {
+      &:after {
+        content: "";
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-image: url('/assets/svg/icon_arrow_popout.svg');
+      }
+      .task-actions {
+        display: none;
+      }
+      .icon-container {
+        display: none;
+      }
+    };
+
+    &.loading {
+      animation: bounce 1s infinite;
+    }
+
+    &.completed {
+      opacity: .9;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px 0 rgba(63,71,78,0.3);
+    }
+
+    .task-toolbar {
+      min-width: 155px;
+      flex-shrink: 0;
+
+      .btn {
+        border-width: 1px;
+      }
+    }
+
+    &-description {
+      margin-bottom: 0;
+      flex-grow: 4;
+    }
+
+    &.health-and-wellness {
+      border-color: $orange;
+    }
+
+    &.financial-and-insurance {
+      border-color: $primary;
+    }
+
+    &.legal-and-legacy {
+      border-color: $blue;
+    }
+
+    &.social-and-spiritual {
+      border-color: $purple;
+    }
+
+    &.home-and-care {
+      border-color: $yellow;
+    }
+
+    &.care-giving-and-tech {
+      border-color: $pink;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top:0; left: 0; bottom: 0; right: 0;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 89;
+}
+
+.task-details {
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $light;
+  z-index: 90;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: 75%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+  }
+
+  &-content {
+    padding: 2rem 1.5rem;
+    @include media-breakpoint-up(sm) {
+      padding: 2rem 3rem;
+    }
+  }
+
+  .swiper-slide {
+    width: 70%;
+    margin-right: 1rem;
+  }
+
+  .button-next, .button-prev {
+    display: inline-flex;
+    cursor: pointer;
+    color: $gray-500;
+
+    &.swiper-button-disabled {
+      color: $gray-200;
+    }
+
+    &:hover:not(.swiper-button-disabled) {
+      color: $primary;
+    }
+  }
+}
+
+.progress-bar {
+  &.health-and-wellness{
+    background-color: $orange;
+  }
+
+  &.financial-and-insurance {
+    background-color: $primary
+  }
+
+  &.legal-and-legacy {
+    background-color: $blue;
+  }
+
+  &.social-and-spiritual {
+    background-color: $purple;
+  }
+
+  &.home-and-care {
+    background-color: $yellow;
+  }
+
+  &.care-giving-and-tech {
+    background-color: $pink;
+  }
+}
+
+.category-intro {
+  font-size: .9rem;
+}
+
+.category-progress {
+  position: relative;
+
+  &:first-child::before {
+    position: absolute;
+    top: -12px;
+    right: 0;
+    content: "";
+    width: 83%;
+    border-bottom: 2px solid $gray-200;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    content: "";
+    width: 83%;
+    border-bottom: 2px solid $gray-200;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &::after, &::before {
+      display: none;
+    }
+  }
+
+  .bg-link {
+    position: absolute !important;
+    z-index: 12;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+
+  .category-progress-link {
+    font-weight: 300 !important;
+  }
+
+  .category-progress-title {
+    font-size: .9rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.1rem;
+    }
+
+    .icon {
+      position: absolute;
+      right: 16px;
+      top: 20px;
+    }
+
+    @include media-breakpoint-up(md) {
+      .icon {
+        display: none;
+      }
+    }
+  }
+
+  &:hover {
+    .svg-progress {
+      path {
+        stroke-dashoffset: 0 !important;
+      }
+    }
+
+    .category-progress-link {
+      .icon {
+        transform: translateX(7px);
+        opacity: 1;
+      }
+    }
+  }
+
+  //TODO Could this be a mixin?
+
+  &.health-and-wellness {
+    &:hover {
+      .category-progress-link {
+        color: $orange;
+      }
+    }
+
+    .svg-progress path {
+      stroke: $orange;
+    }
+  }
+
+  &.financial-and-insurance {
+    &:hover {
+      .category-progress-link {
+        color: $primary;
+      }
+    }
+
+    .svg-progress path {
+      stroke: $primary;
+    }
+  }
+
+  &.legal-and-legacy {
+    &:hover {
+      .category-progress-link {
+        color: $blue;
+      }
+    }
+
+    .svg-progress path {
+      stroke: $blue;
+    }
+  }
+
+  &.social-and-spiritual {
+    &:hover {
+      .category-progress-link {
+        color: $purple;
+      }
+    }
+
+    .svg-progress path {
+      stroke: $purple;
+    }
+  }
+
+  &.home-and-care {
+    &:hover {
+      .category-progress-link {
+        color: $yellow;
+      }
+    }
+
+    .svg-progress path {
+      stroke: $yellow;
+    }
+  }
+
+  &.care-giving-and-tech {
+    &:hover {
+      .category-progress-link {
+        color: $pink;
+      }
+    }
+
+    .svg-progress path {
+      stroke: $pink;
+    }
+  }
+
+  .category-progress-link {
+    .icon {
+      opacity: 0;
+      height: .7em;
+      transition: opacity .05s, transform .25s;
+    }
+  }
+}
+
+.icon-holder {
+  height: 60px;
+  width: 60px;
+  border: 3px solid $gray-200;
+  text-align: center;
+  border-radius: 100%;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media-breakpoint-up(lg) {
+    height: 77px;
+    width: 77px;
+  }
+
+  &.icon-holder-lg {
+    height: 90px;
+    width: 90px;
+
+    @include media-breakpoint-up(lg) {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
+
+.svg-progress {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+
+  path {
+    stroke-dasharray: 250;
+    stroke-dashoffset: 240;
+    transition: 0.5s all;
+  }
+
+  .icon-holder & {
+    height: 62px;
+
+    @include media-breakpoint-up(lg) {
+      height: 79px;
+    }
+  }
+
+  .icon-holder-lg & {
+
+  }
+}
+
+.btn-checklist-checkbox {
+  padding: 10px 0;
+  margin-right: .3rem;
+  width: 42px;
+  font-size: .9rem;
+  text-align: center;
+
+  svg {
+    height: 12px;
+  }
+
+  color: $white;
+}
+
+.print-checklist-checkbox {
+  border: 1px solid $gray-600;
+  height: 25px;
+  width: 25px;
+  display: block;
+}
+

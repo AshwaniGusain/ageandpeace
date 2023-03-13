@@ -1,0 +1,38 @@
+{
+    "name": "snap/decorator",
+    "description": "Decorator.",
+    "keywords": ["snap", "decorator"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Decorator\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Decorator\\DecoratorServiceProvider"
+            ],
+            "aliases": {
+                "Decorator": "Snap\\Decorator\\Facades\\Decorator"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

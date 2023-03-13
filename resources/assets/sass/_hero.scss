@@ -1,0 +1,17 @@
+.hero {
+  background-size: cover;
+  background-position: center;
+}
+.hero-text {
+  min-height: 650px;
+}
+
+.hero-text-box {
+  background-color: rgba(49, 55, 60, .75);
+  padding: 20px;
+  margin-top: 280px;
+  * {
+    color: $white;
+    //text-shadow: 2px 2px 15px #333333;
+  }
+}

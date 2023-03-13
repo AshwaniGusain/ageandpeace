@@ -1,0 +1,1 @@
+This is the SNAP admin package and will make all your dreams come true.

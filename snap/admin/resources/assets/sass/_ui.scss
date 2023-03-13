@@ -1,0 +1,491 @@
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+.snap-sidebar {
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.4);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 3px rgba(140,140,140,0.9);
+}
+
+
+.sitetitle {
+	font-size: 2em;
+}
+
+.page-container {
+	display: table;
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	table-layout: fixed;
+}
+
+.nav-sidebar {
+	>ul { margin: 0; padding: 0;
+		>li { padding-left: 20px; }
+		a { display: block; padding-top: 10px; padding-bottom: 10px;
+			color: $panel-dark-text; border-bottom: 1px solid $panel-dark-border;
+
+		}
+		// a:hover { color: @panel-dark-text; background: none;}
+	}
+	/*li { border-bottom: 1px solid @panel-dark-border; }*/
+
+}
+
+.bg-darker {
+	background-color: #30353a !important;
+}
+
+.navbar {
+	border-top: 1px solid #e9ecef;
+	border-bottom: 1px solid #e9ecef;
+}
+
+.snap-main-top-panel {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	height: 80px;
+	background-color: #fff;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 1rem;
+	/*box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);*/
+}
+
+.snap-main-top-panel .btn-group .btn svg {
+	fill: #fff;
+}
+.snap-main-content {
+	background-color: #f9f9f9;
+	position: absolute;
+	top: 80px;
+	right: 0px;
+	bottom: 71px;
+	left: 0px;
+	overflow: auto;
+}
+
+.snap-main-bot-panel {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 100;
+	height: 71px;
+	border-top: 1px solid #eee;
+	/*box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.1);*/
+}
+
+.snap-module-description {
+
+}
+
+#snap-login {
+	padding: 7% 0 0 0;
+	border: none;
+	background-color: transparent;
+	margin: 0 auto;
+
+	label {
+		color: $gray-500;
+	}
+	input.form-control {
+		border-color: $gray-600;
+	}
+}
+
+#snap-menu {
+	padding: 1rem;
+	color: #868e96;
+
+	> ul > li .nolink {
+		text-transform: uppercase;
+		display: block;
+	}
+
+	> ul ul {
+		margin-bottom: 10px;
+	}
+	// > ul > li .nav-link {
+	// 	padding-left: 0;
+	// }
+
+	.nav-link {
+		padding: .1rem .5rem .1rem .3rem;
+	}
+
+	.nav-item {
+		i {
+			width: 16px;
+			text-align: center;
+		}
+	}
+}
+
+#snap_actions {
+	position: absolute;
+	background: #fff;
+	height: 125px;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+}
+
+#snap-main {
+	position: absolute;
+	top: 0px;
+	left: 220px;
+	right: 0px;
+	bottom: 0px;
+	transition: all ease-in-out .5s;
+}
+
+#snap-main-display {
+	position: absolute;
+	top: 62px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	overflow: auto;
+	//border-top: 1px solid #e9ecef;
+	&.snap-main-display-with-actions {
+		top: 114px;
+	}
+	&.snap-main-display-with-footer {
+		bottom: 62px;
+	}
+}
+
+#snap-module-title {
+	padding: 11px 1rem 12px 1rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 62px;
+	border-bottom: 1px solid #e9ecef;
+	h1  {
+		margin: 0;
+		font-size: 2rem;
+		//padding-left: 10px;
+		max-width: 690px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	> .btn-toolbar > .btn-group {
+		margin-right: 10px;
+	}
+}
+
+#snap-actions {
+	//z-index: 1;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	border-top: none;
+}
+
+#snap-actions-right {
+	flex-flow: row nowrap
+}
+
+#snap-sidebar {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	width: 220px;
+	transition: all ease-in-out .5s;
+}
+
+#snap-topbar {
+	//display: none;
+	z-index: 1;
+	position: relative;
+	height: 0px;
+	transition: all ease-in-out .5s;
+	overflow: hidden;
+}
+
+#snap-mobile-menu {
+	position: absolute;
+	line-height: 62px;
+	color: $gray-600;
+	padding: 0px 1rem 0px 1rem;
+	text-decoration: none;
+	font-size: 1.5rem;
+	&:hover {
+		color: $gray-500;
+	}
+}
+
+#snap-menu-header > div {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+#snap-close-menu {
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	color: $gray-700;
+	font-size: 1rem;
+	&:hover {
+		color: $gray-600;
+	}
+}
+
+#snap-mobile-link-external {
+	position: relative;
+	i {
+		opacity: 0;
+		transition: all ease-in-out .2s;
+		font-size: 16px;
+	}
+	&:hover i {
+		opacity: 1;
+	}
+}
+
+.snap-mobile-mode {
+	#snap-resource-search {
+		max-width: 150px;
+	}
+
+	#snap-topbar {
+		width: 100%;
+		height: 62px;
+		header {
+			font-size: 1.6rem;
+			//color: $panel-dark-text; border-bottom: 1px solid $panel-dark-border;
+			button {
+
+				height: 62px;
+				line-height: 62px;
+				text-align: center;
+			}
+		}
+	}
+
+	#snap-sidebar {
+		width: 0px;
+		border: 0;
+	}
+
+	#snap-main {
+		left: 0px;
+		top: 62px;
+	}
+
+}
+
+.snap-menu-off {
+
+	#snap-topbar {
+		width: 100%;
+		height: 62px;
+		header {
+			font-size: 1.6rem;
+			//color: $panel-dark-text; border-bottom: 1px solid $panel-dark-border;
+			button {
+
+				height: 62px;
+				line-height: 62px;
+				text-align: center;
+			}
+		}
+	}
+
+	#snap-sidebar {
+		width: 0;
+		z-index: 100;
+		border: 0;
+	}
+
+	#snap-main {
+		left: 0px;
+		top: 62px;
+	}
+}
+@include media-breakpoint-down(sm) {
+	.snap-menu-on {
+
+		#snap-sidebar {
+			width: 100%;
+			z-index: 100;
+		}
+
+	}
+}
+
+@include media-breakpoint-down(sm) {
+
+	#snap-resource-search {
+		max-width: 150px;
+	}
+
+	#snap-topbar {
+		width: 100%;
+		height: 62px;
+		header {
+			font-size: 1.6rem;
+			//color: $panel-dark-text; border-bottom: 1px solid $panel-dark-border;
+			button {
+
+				height: 62px;
+				line-height: 62px;
+				text-align: center;
+			}
+		}
+	}
+
+	#snap-sidebar {
+		width: 0px;
+		border: 0;
+	}
+
+	#snap-main {
+		left: 0px;
+		top: 62px;
+	}
+
+}
+
+#snap-loader {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 10000;
+}
+
+#snap-main-footer {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	height: 62px;
+	padding: 13px 0 5px 0;
+	// padding: 15px 0;
+	align-items: center;
+	border-top: 1px solid #e9ecef;
+	justify-content: flex-start;
+	.pagination {
+		margin: 0;
+	}
+	.pagination-count {
+		position: absolute;
+		margin-right: 1rem;
+		margin-top: 8px;
+	}
+	&.modal-footer {
+		padding: 15px;
+	}
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
+#snap-main-footer {
+	select#__limit__ {
+		margin-left: 10px;
+	}
+}
+
+#snap-resource-preview {
+	display: none;
+}
+
+.snap-preview-mode {
+	#snap-sidebar {
+		width: 0px;
+		border: none;
+	}
+
+	#snap-module-title .btn-group.float-left, #snap-resource-related {
+		display: none;
+	}
+
+	#snap-module-title, #snap-main-display {
+		border-right: 1px solid #e9ecef;
+	}
+
+	#snap-main {
+		left: 0;
+	}
+
+	#snap-main-display {
+		//top: 0;
+		width: 30%;
+		bottom: 0 !important;
+		.col-9 {
+			width: 100%;
+			max-width: 100%;
+			flex: 0 0 100%;
+		}
+		//border-top: none;
+		//&.snap-main-display-with-footer {
+		//	bottom: 0 !important;
+		//}
+	}
+
+	#snap-resource-preview {
+		display: block;
+		position: absolute;
+		top: 62px;
+		left: 30%;
+		right: 0;
+		bottom: 0;
+
+		iframe {
+			border: 2px solid #000; width: 100%; height: 100%; position: absolute; bottom: 0px; top: 0px; right: 0px; xleft: 67%; z-index: 2;
+		}
+
+	}
+
+	#snap-main-footer {
+		display: none;
+	}
+}
+
+#snap-progress {
+	border-radius: 0;
+	height: 5px;
+	position: absolute;
+	// bottom: 60px;
+	right: 0px;
+	left: 0px;
+	z-index: 999;
+}
+
+#snap-related-info {
+	.card-body {
+		padding: .75rem 1.25rem .25rem 1.25rem;
+	}
+	.card-title h5 {
+		margin-bottom: 0;
+	}
+	.list-group-item {
+		padding: 0.5rem 1.25rem;
+	}
+}
+
+#snap-resource-listing {
+	padding: 1.25rem;
+}
+
+.snap-ajax-placeholder {
+	position: relative;
+}

@@ -1,0 +1,14 @@
+.title-bar {
+  background-image: linear-gradient(180deg, $light 230px, $white 0);
+  background-size: 100%;
+
+  .search-toolbar {
+    //position: relative;
+    background: $white;
+    box-shadow: 0 0 .5rem rgba(49, 55, 60, 0.15);
+
+    .zip-field {
+      min-width: 100px;
+    }
+  }
+}

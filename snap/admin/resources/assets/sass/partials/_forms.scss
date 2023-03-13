@@ -1,0 +1,30 @@
+label {
+	margin-bottom: 0.2rem;
+}
+.required {
+	color: #c30;
+}
+
+.checkboxes-field .child {
+	padding-left: 20px;
+}
+
+.error.text-danger {
+    padding-left: 20px;
+}
+
+[data-toggle="tooltip"] {
+	&:after {
+		color: $gray-400;
+		content: '[?]'
+	}
+}
+
+.display-only {
+	font-style: italic;
+}
+
+.form-check-group-label {
+	@extend .mt-3
+;
+}

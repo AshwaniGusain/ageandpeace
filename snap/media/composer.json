@@ -1,0 +1,44 @@
+{
+    "name": "snap/media",
+    "description": "Media.",
+    "keywords": ["snap","media"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "require": {
+        "snap/support": "dev-develop",
+        "snap/asset": "dev-develop",
+        "snap/decorator": "dev-develop",
+        "snap/ui": "dev-develop"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Media\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Media\\MediaServiceProvider"
+            ],
+            "aliases": {
+                "Media": "Snap\\Media\\Facades\\Media"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

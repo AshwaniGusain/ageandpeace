@@ -1,0 +1,1 @@
+<snap-ajax-placeholder url="{{ $url }}" @if ($params) :params="{!! $params !!}" @endif style="width: {{ $width }}; height:{{ $height }};"></snap-ajax-placeholder>

@@ -1,0 +1,32 @@
+{
+    "name": "snap/datatable",
+    "description": "DataTable.",
+    "keywords": ["snap","datatable"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Snap\\DataTable\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\DataTable\\DataTableServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

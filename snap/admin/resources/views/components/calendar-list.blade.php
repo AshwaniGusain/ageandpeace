@@ -1,0 +1,1 @@
+<snap-calendar class="m-4" ref="calendar" :options='{!! $calendar->getOptionsJson() !!}'></snap-calendar>

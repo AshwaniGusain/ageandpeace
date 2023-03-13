@@ -1,0 +1,33 @@
+{
+    "name": "snap/cache",
+    "description": "Cache.",
+    "keywords": ["snap", "cache"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+
+        "psr-4": {"Snap\\Cache\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Cache\\CacheServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

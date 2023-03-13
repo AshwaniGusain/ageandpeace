@@ -1,0 +1,40 @@
+.icon {
+  height: 1em;
+  fill: currentColor;
+
+  &.icon-sm {
+    height: .8em;
+  }
+
+  &.icon-2x {
+    height: 2em;
+  }
+
+  &.icon-3x {
+    height: 3em;
+  }
+}
+
+.icon-login {
+  height: 1.2em;
+}
+
+.icon-block-cta {
+  height: 2.5rem;
+}
+
+.icon-share {
+  display: block;
+  height: 1.5rem;
+}
+
+.icon-rating {
+  height: 1em;
+  fill: currentColor;
+
+  &.lg {
+    display: inline-block;
+    height: 1.2em;
+    margin-right: .2rem;
+  }
+}

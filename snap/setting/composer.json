@@ -1,0 +1,38 @@
+{
+    "name": "snap/setting",
+    "description": "Settings.",
+    "keywords": ["snap", "setting"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Setting\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Setting\\SettingServiceProvider"
+            ],
+            "aliases": {
+                "Setting": "Snap\\Setting\\Facades\\Setting"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

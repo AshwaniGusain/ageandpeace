@@ -1,0 +1,49 @@
+.form-group {
+    label {
+        color: $gray-600;
+        font-size: .9rem;
+        font-weight: 700;
+    }
+}
+
+.form-control {
+    font-size: .85rem;
+
+    &:disabled {
+        color: $white;
+
+        &::placeholder {
+            color: $white;
+        }
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.input-group-append {
+    .btn {
+        padding: .5rem;
+        min-width: 52px;
+    }
+}
+
+.custom-select {
+    background: url('../svg/icon_double_arrows.svg') no-repeat calc(100% - 12px) center / 8px, linear-gradient($white, $gray-100);
+    height: calc(1.2em + 1.2rem + 2px);
+    padding: 0.5rem 1.8rem 0.5rem 0.8rem;
+}
+
+.custom-select:disabled {
+    opacity: 0.5;
+}
+
+.loader {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin: auto;
+    background: transparent url('../images/spinner.gif') no-repeat;
+    text-align: center;
+}

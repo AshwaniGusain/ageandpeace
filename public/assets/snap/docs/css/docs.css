@@ -1,0 +1,15 @@
+@charset "UTF-8";
+a.docs-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+a.docs-link:after {
+  font-family: "FontAwesome";
+  font-size: 10px;
+  content: "\F0C1";
+  padding-left: 3px;
+}
+
+.docs-method-params {
+  color: #868e96;
+}

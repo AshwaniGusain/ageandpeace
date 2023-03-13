@@ -1,0 +1,38 @@
+{
+    "name": "snap/asset",
+    "description": "Asset.",
+    "keywords": ["snap","asset"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Asset\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Asset\\AssetServiceProvider"
+            ],
+            "aliases": {
+                "Asset": "Snap\\Asset\\Facades\\Asset"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

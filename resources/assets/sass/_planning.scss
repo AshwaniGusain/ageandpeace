@@ -1,0 +1,16 @@
+.hero-planning {
+  //background-image: url("//placehold.it/1440X800/b4bcc5/dadee1?text=hero");
+  background-image: url("../images/hero_about.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .hero-text {
+    min-height: 600px;
+  }
+}
+
+.testimonials {
+  background:{
+    color: $blue;
+  }
+}

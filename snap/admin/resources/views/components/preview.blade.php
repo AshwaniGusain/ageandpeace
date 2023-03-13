@@ -1,0 +1,1 @@
+<snap-resource-preview url="{{ url($prefix) }}" loading-url="{{ $loading_url }}" slug-input="{{ $slug_input }}" id="snap-resource-preview" ref="snap-resource-preview"></snap-resource-preview>

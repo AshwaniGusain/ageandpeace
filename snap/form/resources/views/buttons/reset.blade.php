@@ -1,0 +1,1 @@
+<input type="reset" {!! html_attrs($attrs) !!}>

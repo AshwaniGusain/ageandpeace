@@ -1,0 +1,31 @@
+// Variables
+// $theme-colors: (
+//   "primary": #3dbfd9,
+//   // "danger": #ff4136
+// );
+@import "../../../../../resources/assets/snap/sass/variables";
+
+// Font Awesome
+@import "~font-awesome/scss/font-awesome.scss";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import "variables";
+@import "overwrites";
+@import "util";
+@import "layout";
+@import "ui";
+@import "partials/forms";
+@import "partials/datatable";
+@import "partials/listing";
+@import "partials/repeatable";
+@import "partials/sidebar";
+@import "partials/filters";
+@import "partials/icons";
+@import "partials/modal";
+@import "partials/fields";
+@import "partials/alerts";
+@import "partials/loader";
+@import "partials/filemanager";
+@import "partials/dashboard";

@@ -1,0 +1,22 @@
+.snap-loader {
+	margin: auto;
+	width: 32px;
+	height: 32px;
+	text-align: center;
+	background: #fff url(../admin/images/spinner.gif) no-repeat center center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: 0 auto 0 -16px;
+	transform: translateY(-50%);
+	z-index: 100;
+}
+
+.snap-loader-inline {
+	display: inline-block;
+	margin: auto;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	background: #fff url(../admin/images/spinner.gif) no-repeat center center;
+}

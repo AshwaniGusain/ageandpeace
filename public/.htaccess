@@ -1,0 +1,49 @@
+# GZIP: https://knackforge.com/blog/karalmax/how-enable-gzip-compression-apache
+<IfModule mod_mime.c>
+	AddType application/x-javascript .js
+	AddType text/css .css
+</IfModule>
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/css application/x-javascript text/x-component text/html text/plain text/xml application/javascript
+	<IfModule mod_setenvif.c>
+		BrowserMatch ^Mozilla/4 gzip-only-text/html
+		BrowserMatch ^Mozilla/4.0[678] no-gzip
+		BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+	</IfModule>
+ </IfModule>
+Header append Vary User-Agent env=!dont-vary
+
+# Cache Headers: https://web.dev/uses-long-cache-ttl/?utm_source=lighthouse&utm_medium=devtools
+<filesMatch ".(ico|jpg|jpeg|png|gif|js|css)$">
+	#Causes issues with running Lighthouse Report and must do Incognito
+    Header set Cache-Control "max-age=31536000"
+</filesMatch>
+
+# Observatory
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Xss-Protection "1; mode=block"
+Header always edit Set-Cookie (.*) "$1; Secure; HttpOnly; SameSite=Strict"
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

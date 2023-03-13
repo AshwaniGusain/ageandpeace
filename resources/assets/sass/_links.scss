@@ -1,0 +1,50 @@
+a[href^="tel:"] {
+  color: map_get($theme-colors, 'primary');
+}
+
+a:not(.btn):not(.tiny-link) {
+  //position: relative;
+  font-weight: 700;
+  transition: all 0.1s ease-in-out;
+}
+
+.play-link {
+  &:hover {
+    text-decoration: none;
+
+    .icon {
+      animation: scaleUp .75s;
+      transform-origin: center;
+    }
+  }
+}
+
+.link-arrow {
+  font-weight: 700;
+  font-size: .9rem;
+
+  h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+    font-size: inherit;
+  }
+
+  .icon {
+    margin-left: 5px;
+    transition: .2s transform;
+    fill: currentColor;
+    height: .7em;
+  }
+
+  &:hover {
+    text-decoration: none;
+    .icon {
+      transform: translateX(7px);
+    }
+  }
+}
+
+.tiny-link {
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: underline;
+  color: inherit;
+}

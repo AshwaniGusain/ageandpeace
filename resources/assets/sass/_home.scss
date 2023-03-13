@@ -1,0 +1,74 @@
+.hero-home {
+  //background-image: url("//placehold.it/1440X800/b4bcc5/dadee1?text=hero");
+  background-image: url("../images/hero_home.jpg");
+
+  .hero-text {
+    min-height: 650px;
+  }
+}
+
+.categories {
+  //.icon:hover {
+  //  animation: scaleUp .75s;
+  //  transform-origin: center;
+  //}
+  .icon {
+    margin-bottom: .25rem;
+  }
+
+  li a {
+    font-weight: 400;
+    //color: $gray-500;
+    margin-top: 4px;
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .health-wellness a:hover {
+    color: $orange;
+  }
+
+  .financial-insurance a:hover {
+    color: $primary;
+  }
+
+  .legal-choices a:hover {
+    color: $blue;
+  }
+
+  .social-spiritual a:hover {
+    color: $purple;
+  }
+
+  .home-care a:hover {
+    color: $yellow;
+  }
+
+  .caregiving a:hover {
+    color: $pink;
+  }
+}
+
+.signup {
+  background: url("../svg/signup-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.prefooter {
+  .block-cta {
+    @include media-breakpoint-up(md) {
+      &:first-child {
+        border-right: 2px solid $white;
+      }
+
+      &:last-child {
+        border-left: 2px solid $white;
+      }
+    }
+  }
+}

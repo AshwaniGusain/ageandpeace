@@ -1,0 +1,38 @@
+{
+    "name": "snap/taxonomy",
+    "description": "Taxonomy.",
+    "keywords": ["snap", "taxonomy"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Taxonomy\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Taxonomy\\TaxonomyServiceProvider"
+            ],
+            "aliases": {
+                "Taxonomy": "Snap\\Taxonomy\\Facades\\Taxonomy"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

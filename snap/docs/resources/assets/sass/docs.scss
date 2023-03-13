@@ -1,0 +1,13 @@
+a.docs-link {
+  font-weight: bold;
+  text-decoration: none;
+  &:after {
+    font-family: 'FontAwesome';
+    font-size: 10px;
+    content: "\f0c1";
+    padding-left: 3px;
+  }
+}
+.docs-method-params {
+  color: #868e96;
+}

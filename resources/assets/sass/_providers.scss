@@ -1,0 +1,41 @@
+.provider-listing {
+  .provider-rating {
+    margin-bottom: .2rem;
+  }
+}
+
+.filter-toggle {
+  margin-left: 1rem;
+
+  .btn {
+    &:focus {
+      box-shadow: none !important;
+    }
+
+    &:not(:hover) {
+      background-color: $white;
+      color: $primary;
+      border-color: $primary;
+    }
+    //font-size: .75rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    margin-left: 0;
+
+    .btn {
+      width: 50%;
+    }
+  }
+}
+
+.pagination {
+  padding: .5rem;
+  .btn-pagination {
+    padding: 7px 0;
+    margin: .25rem;
+    font-size: .7rem;
+    width: 32px;
+  }
+}

@@ -1,0 +1,43 @@
+{
+    "name": "snap/support",
+    "description": "Support.",
+    "keywords": ["snap","support"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/Support/Helpers/array_helpers.php",
+            "src/Support/Helpers/date_helpers.php",
+            "src/Support/Helpers/html_helpers.php",
+            "src/Support/Helpers/number_helpers.php",
+            "src/Support/Helpers/sanitize_helpers.php",
+            "src/Support/Helpers/text_helpers.php",
+            "src/Support/Helpers/url_helpers.php",
+            "src/Support/Helpers/util_helpers.php",
+            "src/Support/Helpers/file_helpers.php"
+        ],
+        "psr-4": {"Snap\\Support\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Support\\SupportServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

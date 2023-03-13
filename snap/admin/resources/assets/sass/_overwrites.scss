@@ -1,0 +1,30 @@
+.btn-primary {
+	color: #fff;
+}
+.dropdown-menu-right {
+	left: auto;
+	right: 0;
+}
+pre {
+	background-color: #eee;
+	padding: 10px;
+}
+code {
+	display: inline-block;
+	background-color: #eee;
+	padding: 0 3px;
+}
+
+hr {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+small {
+	font-size: .7rem;
+}
+
+// For Redactor Image Manager
+div.redactor-modal-tab[data-title="Choose"] img {
+	width: auto !important;
+}

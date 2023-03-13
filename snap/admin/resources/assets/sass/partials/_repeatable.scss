@@ -1,0 +1,28 @@
+// REPEATABLE
+.repeatable-rows {
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+
+	.repeatable-row {
+		margin-left: 0;
+		padding-left: 25px;
+	
+		&.list-group-item:last-child {
+			margin-bottom: -1px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+}
+
+.repeatable-add {
+	padding: .75rem 1.25rem;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	//border-left: 1px solid rgba(0, 0, 0, 0.125);
+	//border-right: 1px solid rgba(0, 0, 0, 0.125);
+	//border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+	position: relative;
+	background-color: #fff;
+	border-bottom-right-radius: .25rem;
+	border-bottom-left-radius: .25rem;
+}

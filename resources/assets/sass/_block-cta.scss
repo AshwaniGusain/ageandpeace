@@ -1,0 +1,52 @@
+.block-cta {
+  position: relative;
+  background-color: $light;
+  transition: 0.1s background;
+
+  .block-cta-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .post-sidebar & {
+    .block-cta-content {
+      @include media-breakpoint-up(md) {
+        justify-content: flex-start;
+      }
+    }
+
+    .block-cta-icon {
+      width: 65px;
+      text-align: center;
+    }
+  }
+
+
+  .bg-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .link-arrow {
+    transition: color 0s;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+
+    .link-arrow {
+      .icon {
+        transform: translateX(7px);
+      }
+    }
+  }
+}

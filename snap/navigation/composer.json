@@ -1,0 +1,38 @@
+{
+    "name": "snap/navigation",
+    "description": "Navigation.",
+    "keywords": ["snap", "navigation"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Navigation\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Navigation\\NavigationServiceProvider"
+            ],
+            "aliases": {
+                "Nav": "Snap\\Navigation\\Facades\\Nav"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

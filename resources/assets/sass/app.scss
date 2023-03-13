@@ -1,0 +1,39 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//global partials
+@import 'base';
+@import "util";
+@import 'typography';
+@import 'animations';
+@import 'lists';
+@import 'icons';
+@import 'button';
+@import 'links';
+@import 'form';
+@import 'img';
+@import 'nav';
+@import 'footer';
+@import 'modal';
+@import 'title-bar';
+@import 'block-cta';
+
+//pages
+@import 'home';
+@import 'dashboard';
+@import 'planning';
+@import 'news';
+@import 'providers';
+@import 'carousel';
+@import 'hero';
+@import 'errors';
+
+@import "~vue-directive-tooltip/css/index.css";
+@import '~swiper/dist/css/swiper.css';

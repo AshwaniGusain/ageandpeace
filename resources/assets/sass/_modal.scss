@@ -1,0 +1,50 @@
+[v-cloak] {
+  display: none;
+}
+
+.card-modal {
+  display: flex;
+  min-width: 100%;
+
+  .card-body {
+    @include media-breakpoint-up(md) {
+      padding: 2.5rem;
+    }
+  }
+
+  .form-group {
+    margin-bottom: .75rem;
+
+    label {
+      margin-bottom: .1rem;
+    }
+  }
+
+  .btn-block {
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  background-color: $dark;
+  //top: -999px;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  z-index: 99;
+
+  &.open {
+    top: 0;
+  }
+
+  .close {
+    color: $white;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}

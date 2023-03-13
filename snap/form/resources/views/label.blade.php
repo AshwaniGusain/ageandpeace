@@ -1,0 +1,2 @@
+@if ($use_tag)<label @if (!empty($for))for="{{ $for }}"@endif{!! ($comment) ? ' data-toggle="tooltip" title="'.$comment.'"' : '' !!}{!! !empty($attrs) ? '' : '' !!}>@endif{!! $text !!}@if ($required)<span class="required">*</span>@endif
+@if ($use_tag)</label>@endif

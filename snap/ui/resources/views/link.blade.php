@@ -1,0 +1,1 @@
+<a {!! html_attrs($attrs) !!}>{!! $content !!}</a>

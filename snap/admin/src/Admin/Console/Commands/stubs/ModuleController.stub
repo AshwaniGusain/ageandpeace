@@ -1,0 +1,13 @@
+<?php
+
+namespace {{Namespace}};
+
+use Snap\Admin\Http\Controllers\ModuleController;
+
+class {{ControllerClass}} extends ModuleController
+{
+	public function index()
+	{
+		return $this->table();
+	}
+}

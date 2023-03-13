@@ -1,0 +1,80 @@
+.btn {
+    text-transform: uppercase;
+    font-size: .75rem;
+    text-align: center;
+    line-height: 1;
+    font-weight: 700;
+    white-space: nowrap;
+
+    //&:not(.btn-sm):not(.btn-pagination):not(.btn-block) {
+    //    padding-bottom: 13px;
+    //}
+}
+
+.card-footer .btn.btn-block {
+    border-radius: 0;
+}
+
+.btn-primary, .btn-outline-primary {
+    &:hover {
+        background-color: $dark-green;
+        border-color: $dark-green;
+    }
+    &.disabled {
+        background-color: $gray-400;
+        border-color: $gray-400;
+        color: $white;
+    }
+}
+
+.btn-arrow {
+    .icon {
+        vertical-align: top;
+        margin-left: 10px;
+        transition: .2s transform;
+        height: .8em;
+    }
+
+    &:hover {
+        .icon {
+            transform: translateX(7px);
+        }
+    }
+}
+
+.btn-pagination {
+    padding: 10px 0;
+    margin-right: .3rem;
+    width: 42px;
+    font-size: .9rem;
+    text-align: center;
+
+    svg {
+        height: 12px;
+    }
+}
+
+.close {
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 1;
+
+    .modal-overlay &, .task-details &{
+        font-size: .8rem;
+        margin: {
+            right: 35px;
+            top: 35px;
+        }
+    }
+
+    &:hover {
+        //animation: scaleUp 0.5s;
+    }
+}
+
+.icon-close {
+    vertical-align: middle;
+    margin-left: .5rem;
+    margin-bottom: 2px;
+    height: 22px;
+}

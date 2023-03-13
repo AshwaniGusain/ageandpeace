@@ -1,0 +1,45 @@
+{
+    "name": "snap/admin",
+    "description": "Admin.",
+    "keywords": ["snap","admin"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "require": {
+        "snap/support": "dev-develop",
+        "snap/asset": "dev-develop",
+        "snap/decorator": "dev-develop",
+        "snap/ui": "dev-develop"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Admin\\": "src/"}
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Admin\\AdminServiceProvider"
+            ],
+            "aliases": {
+                "Admin": "Snap\\Admin\\Facades\\Admin",
+                "Module": "Snap\\Admin\\Facades\\Module"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

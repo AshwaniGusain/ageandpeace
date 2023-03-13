@@ -1,0 +1,133 @@
+//Base Colors
+$white:    #fff;
+$gray-100: #f3f4f6;
+$gray-200: #dadee1;
+$gray-300: #b4bcc5;
+$gray-400: #7e8994;
+$gray-500: #616f7a;
+$gray-600: #3f474e;
+$black:    #31373C;
+
+$green: #42A76E;
+$dark-green: #10753C;
+$magenta: #9F2780;
+$purple: #895BB8;
+$yellow: #ECA941;
+$blue: #4797D9;
+$pink: #D15DBA;
+$orange: #EB7855;
+//End Base Colors
+
+$primary:       $green;
+// $secondary:     $gray-600 !default;
+// $success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+// $light:         $gray-100 !default;
+$dark:          $gray-600;
+
+$theme-colors: (
+  "primary":    $primary,
+  "info": $purple
+);
+
+$body-color: $gray-600;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: ($spacer * .5),
+  2: ($spacer * .75),
+  3: $spacer,
+  4: ($spacer * 1.25),
+  5: ($spacer * 1.5),
+  6: ($spacer * 2),
+  7: ($spacer * 2.5),
+  8: ($spacer * 3),
+  9: ($spacer * 4),
+  10: ($spacer * 5),
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 800px,
+  lg: 1070px,
+  xl: 1440px
+);
+
+$container-max-widths: (
+  //sm: 540px,
+  //md: 720px,
+  lg: 1170px,
+  xl: 1230px
+);
+
+// Body
+$body-bg: $white;
+
+// Typography
+$paragraph-margin-bottom:   1rem !default;
+
+//Base Type
+$font-family-sans-serif: "PT Sans", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+//End Base Type
+
+$font-size-base: 1rem;
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-sm: ($font-size-base * .875) !default;
+
+$line-height-base: 1.5;
+
+$headings-font-weight: 700;
+
+// $font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+// $font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+// $font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+// $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+// $font-size-h5:            $font-size-base !default;
+// $font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~12px
+// Navbar
+$navbar-default-bg: #fff;
+
+//Input
+$input-padding-y: .6rem;
+$input-padding-x: .8rem;
+$input-color: $gray-600;
+$input-placeholder-color: $gray-400;
+$input-border-color: $gray-300;
+
+$input-border-radius: 3px;
+$input-bg: $gray-100;
+$input-disabled-bg: $gray-300;
+$input-focus-bg: $white;
+
+// $custom-select-bg: linear-gradient($white, $gray-100);
+$custom-select-disabled-bg: $gray-300;
+$custom-select-height-sm: 40px;
+
+// Buttons
+$btn-border-radius: 3px;
+$btn-padding-y: 15px;
+$btn-padding-x: 28px;
+$btn-line-height: 1.25;
+$btn-border-width: 2px;
+$btn-transition-speed: .25s;
+$btn-transition: color $btn-transition-speed ease-in-out, background-color $btn-transition-speed ease-in-out, border-color $btn-transition-speed ease-in-out, box-shadow $btn-transition-speed ease-in-out !default;
+
+// Cards
+$card-border-radius: 0;
+
+  // Panels
+$panel-default-heading-bg: #fff;
+
+// Progress bars
+
+$progress-height:                   .75rem;
+$progress-bg:                       $white;
+$progress-border-radius:            10px;
+$progress-bar-color:                $white;
+$progress-bar-bg:                   $primary;
+$progress-bar-animation-timing:     1s linear infinite !default;
+$progress-bar-transition:           width .6s ease !default;

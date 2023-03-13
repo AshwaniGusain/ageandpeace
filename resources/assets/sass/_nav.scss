@@ -1,0 +1,257 @@
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid $gray-200;
+}
+
+.logo-header {
+  height: 36px;
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.logo-header-mobile {
+  height: 47px;
+  width: 79px;
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
+.nav-top {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  .nav-link {
+    color: $gray-400;
+    font-weight: 700;
+    font-size: .85rem;
+  }
+}
+
+.nav-wrapper {
+  background-color: $white;
+}
+
+.nav-container {
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  z-index: 90;
+  pointer-events: none;
+
+  /*@include media-breakpoint-only(sm) {
+    width: 80%;
+  }*/
+
+  @include media-breakpoint-up(lg) {
+    @include make-container();
+    max-width: 1440px;
+    position: static;
+    overflow: visible;
+  }
+}
+
+.nav-categories {
+  font-size: .75rem;
+  pointer-events: auto;
+
+  .nav {
+    flex-wrap: initial;
+  }
+
+
+  .top-only & {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  .nav-label {
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .nav-item--accordion {
+    &:hover {
+      cursor: pointer;
+    }
+
+    .megamenu-content {
+      box-shadow: 0 0.5rem 0.5rem rgba(49, 55, 60, 0.15);
+    }
+
+    @include media-breakpoint-up(lg) {
+      &:hover .megamenu-content {
+        left: 0;
+        transform: translateY(0);
+      }
+
+      .nav-label .icon {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      .nav-label {
+        position: relative;
+        display: flex;
+
+        .icon {
+          transition: 0.2s all;
+          margin-left: auto;
+        }
+      }
+
+      &.submenu-open {
+        .nav-label {
+          background-color: $dark;
+          color: $white;
+
+          .icon {
+            transform: rotateX(-180deg);
+          }
+        }
+
+        .megamenu-content {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    background-color: $white;
+    transform: translateY(-100%);
+    //transition: transform 0.2s, position 0s 0.2s;
+
+    &.open {
+      transform: translateY(0);
+    }
+
+    .nav-label {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .nav-item:not(:first-child) .nav-label {
+      border-top: 1px solid $gray-200;
+    }
+    .nav-item:nth-last-child(2) .nav-label {
+      border-bottom: 1px solid $gray-200;
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .megamenu-content {
+    @include make-container();
+    padding: 1rem 1rem 0 1rem;
+    background-color: $white;
+    display: none;
+    border-bottom: 1px solid $gray-200;
+    //transition: 0.1s transform ease-in-out;
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(4px);
+      display: block;
+      position: absolute;
+      left: -9999px;
+      top: 100%;
+      z-index: 91;
+      padding: 1rem 1.75rem 0 1.75rem;
+    }
+  }
+
+  .megamenu-content-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .megamenu-content-col {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+      width: 200px;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      flex-basis: 20%;
+    }
+
+    &.articles {
+      position: relative;
+      padding-bottom: 90px;
+      flex-grow: 2;
+
+      .media-body {
+        flex: 1 0 50%
+      }
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+
+      img {
+        margin-right: map-get($spacers, 3);
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .nav-category-title {
+    border-bottom: 2px solid;
+    padding-bottom: .25rem;
+  }
+
+  .nav-category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: inline-block;
+      padding: .25rem 0;
+    }
+  }
+
+  .checklist-link {
+    background-image: url('../svg/icon_checklist.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 15px center;
+    position: absolute;
+    bottom: 0;
+    right: -1.75rem;
+    color: $white;
+    padding: 20px 10px;
+    padding-left: 58px;
+    width: calc(100% + 1.75rem);
+    text-align: left;
+    border: {
+      bottom-left-radius: 0;
+      bottom-right-radius: 0;
+      top-right-radius: 0;
+    }
+  }
+}

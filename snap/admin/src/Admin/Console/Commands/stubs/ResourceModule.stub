@@ -1,0 +1,216 @@
+<?php
+
+namespace {{Namespace}};
+
+use Illuminate\Http\Request;
+use Snap\Admin\Modules\ResourceModule;
+use Snap\Admin\Modules\Services\ExportableService;
+use Snap\Admin\Modules\Services\FiltersService;
+use Snap\Admin\Modules\Services\FormService;
+use Snap\Admin\Modules\Services\GridService;
+use Snap\Admin\Modules\Services\IndexableService;
+use Snap\Admin\Modules\Services\LogService;
+use Snap\Admin\Modules\Services\PreviewService;
+use Snap\Admin\Modules\Services\RelatedInfoService;
+use Snap\Admin\Modules\Services\TableService;
+use Snap\Admin\Modules\Services\ScopesService;
+use Snap\Form\Form;
+use App\Models\{{ModelClass}};
+
+class {{ModuleClass}} extends ResourceModule
+{
+    use \Snap\Admin\Modules\Traits\NavigableTrait;
+    use \Snap\Admin\Modules\Traits\FormTrait;
+    use \Snap\Admin\Modules\Traits\TableTrait;
+    use \Snap\Admin\Modules\Traits\SearchTrait;
+    use \Snap\Admin\Modules\Traits\IndexableTrait;
+    use \Snap\Admin\Modules\Traits\ScopesTrait;
+    use \Snap\Admin\Modules\Traits\DeletableTrait;
+
+    // use \Snap\Admin\Modules\Traits\RestorableTrait;
+    // use \Snap\Admin\Modules\Traits\RelatedInfoTrait;
+    // use \Snap\Admin\Modules\Traits\OthersNavigationTrait;
+    // use \Snap\Admin\Modules\Traits\GridTrait;
+    // use \Snap\Admin\Modules\Traits\ListingTrait;
+    // use \Snap\Admin\Modules\Traits\CalendarTrait;
+    // use \Snap\Admin\Modules\Traits\MapTrait;
+    // use \Snap\Admin\Modules\Traits\FiltersTrait;
+    // use \Snap\Admin\Modules\Traits\LogTrait;
+	// use \Snap\Admin\Modules\Traits\ExportableTrait;
+    // use \Snap\Admin\Modules\Traits\PreviewTrait;
+    // use \Snap\Admin\Modules\Traits\AjaxTrait;
+
+    protected $parent = null;
+
+    protected $handle = '{{module}}';
+
+    protected $name = '{{Module}}';
+
+    protected $pluralName = '{{Modules}}';
+
+    protected $menuParent = 'modules';
+
+    protected $menuLabel = '{{Modules}}';
+
+    protected $description = '';
+
+    protected $version = '1.0.0';
+
+    protected $icon = 'fa fa-gear';
+
+    protected $path = __DIR__;
+
+    protected $modules = [];
+
+    protected $uri = null;
+
+    protected $permissions = [];
+
+    protected $permissionsGuard = null;
+
+    protected $config = null;
+
+    protected $routes = [];
+
+    protected $controller = '{{ModuleController}}';
+
+    protected $defaultRouteMethod = 'index';
+
+    protected $model = {{ModelClass}}::class;
+
+    protected $migration = '{{ModuleMigration}}';
+
+    /*protected $ui = [
+        'table'            => 'module.resource.table',
+        'listing'          => 'module.resource.listing',
+        'map'              => 'module.resource.map',
+        'grid'             => 'module.resource.grid',
+        'calendar'         => 'module.resource.calendar',
+        'create'           => 'module.resource.create',
+        'create_inline'    => 'module.resource.create_inline',
+        'edit'             => 'module.resource.edit',
+        'edit_inline'      => 'module.resource.edit_inline',
+        'show'             => 'module.resource.show',
+        'show_inline'      => 'module.resource.show_inline',
+        'delete'           => 'module.resource.delete',
+        'delete_inline'    => 'module.resource.delete_inline',
+        'duplicate'        => 'module.resource.duplicate',
+        'duplicate_inline' => 'module.resource.duplicate_inline',
+        'input'            => 'module.resource.input',
+        'form-inputs'      => 'module.resource.form-inputs',
+        'compare'          => 'module.resource.compare',
+    ];*/
+
+	/**
+     * A place to initialize module information not related to a trait service (e.g. alias ui).
+     */
+    protected function initialize()
+    {
+
+    }
+
+	//protected function table(TableService $table, Request $request)
+	//{
+	//	$table
+	//		->defaultSort('-slug')
+	//		->sortable(['name'])
+	//		->columns(['active_friendly' => 'Active'])
+	//		->format('\Snap\DataTable\DataTableFormatters::booleanFormatter', ['active'])
+	//		->query(function($query){
+	//			$query->where('name', 'Argyle');
+	//		})->format(function($val, $data){
+	//			return ($val) == 1 ? 'Yes' : 'No';
+	//		}, ['active'])
+	//	;
+	//}
+    //
+	//protected function filters(FiltersService $filters, Request $request)
+	//{
+	//	$filters
+	//		->add(Filter::make('name', 'where', '=')
+	//		->withInput('text'))
+	//	;
+	//}
+    //
+	//protected function scopes(ScopesService $scopes, Request $request)
+	//{
+	//	$scopes
+	//		->scaffold()
+	//	;
+	//}
+
+    public function form(FormService $form, Request $request, $resource = null)
+    {
+    	$form
+    		->scaffold()
+            //->addUrl('link', ['required' => true]) // <!--Example
+		;
+
+    }
+
+    //public function inputs()
+	//{
+	//	return [
+    //
+	//	];
+	//}
+    //
+	//protected function relatedInfo(RelatedInfoService $relatedInfo, Request $request)
+	//{
+    //
+	//}
+    //
+    //protected function preview(PreviewService $preview, Request $request)
+    //{
+    //
+    //}
+    //
+    //protected function indexable(IndexableService $indexable, Request $request)
+    //{
+	//	$indexable
+    //        ->fields('name', 'slug', 'body')
+    //        ->excerpt(function($resource){
+    //            return strip_tags($resource->body);
+	//	});
+    //}
+    //
+    //protected function log(LogService $log, Request $request)
+    //{
+    //    $log
+    //        ->enable(true)
+    //        ->message(function($resource){
+    //            return 'The resource '.$resource->display_name.' successfully saved';
+    //        })
+    //        ->level('info')
+    //        ;
+    //}
+    //
+    //protected function grid(GridService $grid, Request $request)
+    //{
+    //    $grid
+    //    	->cols(4)
+    //    ;
+    //}
+    //
+    //protected function export(ExportableService $export, Request $request)
+    //{
+    //    $export
+    //        ->format('\Snap\DataTable\DataTableFormatters::booleanFormatter', ['active'])
+    //    	->fileName('download.csv')
+    //    	->columns('name', 'active')
+    //    	->format(function($val, $data){
+    //        return ($val) == 1 ? 'Yes' : 'No';
+    //    }, ['active'])
+    //    ;
+    //}
+    //
+	//public function beforeSave($resource, $request)
+    //{
+    //	return $resource;
+    //}
+    //
+    //public function afterSave($resource, $request)
+    //{
+    //	return $resource;
+    //}
+ }

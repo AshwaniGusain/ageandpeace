@@ -1,0 +1,72 @@
+/****** Data Table ******/
+.table.datatable {
+	th {
+		border-top: none;
+
+		&.sortable {
+			cursor: pointer;
+			white-space: nowrap;
+		}
+		&.asc:before, &.desc:before {
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		&.asc:before {
+			content: "\f0de\00a0";
+			position: relative;
+			top: 2px;
+		}
+		&.desc:before {
+			content: "\f0dd\00a0";
+			position: relative;
+			top: -2px;
+		}
+	}
+
+	td, th {
+		padding: .4rem 1.25rem;
+	}
+}
+
+.datatable-wrapper {
+	min-height: 500px;
+}
+
+.datatable {
+	.actions, th[data-column="actions"] {
+		//text-align: right;
+		white-space: nowrap;
+        width: 72px;
+        //padding-right: 40px;
+	}
+	&.table-hover td {
+		cursor: pointer;
+	}
+}
+.table-responsive {
+	overflow-x: auto;
+}
+
+
+#snap-resource-table-columns {
+	.dropdown-item {
+		margin : 0;
+	}
+}
+
+.data-table-edit-inline {
+	position: absolute;
+	min-width: 300px;
+	max-height: 300px;
+	overflow: auto;
+	z-index: 2;
+	//background-color: #343a40;
+	background-color: $body-bg;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.25);
+}

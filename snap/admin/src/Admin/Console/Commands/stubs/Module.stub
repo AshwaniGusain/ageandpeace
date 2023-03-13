@@ -1,0 +1,58 @@
+<?php
+
+namespace {{Namespace}};
+
+use Snap\Admin\Modules\Module;
+
+class {{ModuleClass}} extends Module
+{
+    use \Snap\Admin\Modules\Traits\NavigableTrait;
+
+    protected $parent = null;
+
+    protected $handle = '{{module}}';
+
+    protected $name = '{{Module}}';
+
+    protected $pluralName = '{{Modules}}';
+
+    protected $menuParent = 'admin';
+
+    protected $menuLabel = '{{Modules}}';
+
+	protected $menuHandle = '{{Module}}';
+
+    protected $description = '';
+
+    protected $version = '1.0.0';
+
+    protected $icon = 'fa fa-gear';
+
+    protected $path = __DIR__;
+
+    protected $modules = [];
+
+    protected $uri = null;
+
+    protected $permissions = ['view {{module}}'];
+
+    protected $permissionsGuard = null;
+
+    protected $config = null;
+
+    protected $routes = [];
+
+    //protected $controller = '\App\Admin\Controllers\{{Module}}Controller';
+
+    protected $ui = [
+        '{{module}}'            => 'module.{{module}}',
+    ];
+
+	/**
+	 * A place to initialize module information not related to a trait service (e.g. alias ui).
+	 */
+	protected function initialize()
+	{
+
+	}
+}

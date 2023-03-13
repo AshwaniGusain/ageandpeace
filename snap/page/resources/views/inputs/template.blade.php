@@ -1,0 +1,1 @@
+<snap-template-input name="{{ $name }}" scope-key="{{ $key }}" template-url="{{ $template_url }}"{!! !empty($resource_id) ? ' :resource-id="'.$resource_id.'"' : '' !!} :templates='{!! $templates !!}' value="{{ $value }}" scope="{{ $meta_scope }}"></snap-template-input>

@@ -1,0 +1,14 @@
+.filemanager-filename:hover {
+	.filemanager-edit-filename {
+		display: block !important;
+	}
+}
+
+.filemanager-edit-filename {
+	display: none !important;
+	position: absolute; top: 9px; right: 0px; z-index: 2;
+	cursor: pointer;
+	// &:hover {
+	// 	display: block;
+	// }
+}

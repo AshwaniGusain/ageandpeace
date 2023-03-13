@@ -1,0 +1,41 @@
+{
+    "name": "snap/docs",
+    "description": "Docs.",
+    "keywords": ["snap","docs"],
+    "homepage": "http://thedaylightstudio.com",
+    "license": "proprietary",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David McReynolds",
+            "email": "dave@bydaylight.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {"Snap\\Docs\\": "src/"}
+    },
+    "autoload-dev": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "classmap": [
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snap\\Docs\\DocsServiceProvider"
+            ],
+            "aliases": {
+                "Docs": "Snap\\Docs\\Facades\\Docs"
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
